@@ -1,0 +1,58 @@
+﻿@page
+@model DogTrials.Pages.Trials.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Trial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Trial.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trial.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trial.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trial.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trial.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trial.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trial.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trial.Location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trial.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trial.IsActive)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trial.Club)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trial.Club.ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Trial.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

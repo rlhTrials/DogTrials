@@ -1,0 +1,72 @@
+﻿@page
+@model DogTrials.Pages.Dogs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].RegisteredName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].CallName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].Breed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].Owner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dog) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegisteredName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CallName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Breed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner.FullName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

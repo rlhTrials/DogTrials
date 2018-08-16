@@ -1,0 +1,58 @@
+﻿@page
+@model DogTrials.Pages.Dogs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Dog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.RegisteredName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.RegisteredName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.CallName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.CallName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.Sex)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.Sex)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.DateOfBirth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.DateOfBirth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.RegistrationNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.RegistrationNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.Breed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.Breed)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Dog.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

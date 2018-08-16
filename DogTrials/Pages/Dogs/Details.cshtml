@@ -1,0 +1,61 @@
+﻿@page
+@model DogTrials.Pages.Dogs.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.RegisteredName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.RegisteredName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.CallName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.CallName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.Sex)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.Sex)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.DateOfBirth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.DateOfBirth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.RegistrationNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.RegistrationNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.Breed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.Breed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog.Owner)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dog.Owner.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Dog.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
